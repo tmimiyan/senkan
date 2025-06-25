@@ -49,12 +49,12 @@
 
 <script>
    document.getElementById("kaku").onclick = function() {
-              localStorage.setItem('storage',"test1");
+              localStorage.setItem('storage',"test2");
    }
 </script>
 
 <script>
-if (localStorage.getItem("storage") == "test1") {
+if (localStorage.getItem("storage") == "test2") {
 document.getElementById('kaku').style.display = 'none';
 document.getElementById('mains').style.display = 'block';
 alert('すでに投票済みです');
