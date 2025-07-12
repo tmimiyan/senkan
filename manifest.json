@@ -1,0 +1,17 @@
+{
+  "name":"選挙投票",
+  "short_name":"選挙投票",
+  "icons": [{
+      "src": "apple-touch-icons.png",
+      "sizes":"180x180",
+      "type": "image/png"
+    }, {
+      "src": "apple-touch-icons.png",
+      "sizes":"180x180",
+      "type": "image/png"
+    }],
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF"
+}
