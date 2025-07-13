@@ -13,6 +13,5 @@
   "start_url": "index.html",
   "display": "minimal-ui",
   "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF",
-  "gcm_sender_id": "265317578730"
+  "theme_color": "#FFFFFF"
 }
