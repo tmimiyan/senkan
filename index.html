@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9"/>
+	        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=XXXXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXX');
+        </script>
+        <meta charset="UTF-8">
+        <title>選挙投票</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" href="apple-touch-icons.png">
+        <link rel="manifest" href="manifest.json">
+
+        <link rel="stylesheet" href="main.css">
+
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+</head>
+<body>
+
+<p id="mains" style="transform: rotate(0deg); transform-origin: top right; writing-mode: initial; font-size: 18px; display:none; font-family: sans-serif;">投票は完了しています。<br>ご協力頂きありがとうございました。</p>
+
+<div align="center">
+<div class="boby" id="main" style="display:none">
+<form action= "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiFt2UIuG3H-_cVBt_BGuwWF6-Y0PKUtlmWs-cyGA3UvbWGA/formResponse" "method="post" target="hidden_iframe" onsubmit="submitted=true;">
+<table border="1"  style="border-style:solid; border-collapse:collapse; border-width:6;">
+<tr>
+<td style="border-style:solid; border-width:3; background-color:#fff9d5; padding:9px">
+<br>
+<textarea  name="entry.1041021733" rows="6" cols="20" style="font-size: 40pt;"></textarea><br>
+<p></p><br>
+<span style="font-size: 10pt;color: #000000;">二　候補者でない者の氏名は、書かないこと。</span><br>
+<span style="font-size: 10pt;color: #000000;">一　候補者の氏名は、欄内に一人書くこと。</span><br><br>
+<p></p>
+<span class="field" style="color: #000000;"><b>第二十二回総裁選</b></span>
+</td>
+</tr>
+</table>
+<br><input class="boby" type="submit" name="" value="投票する" id="kaku" style="position: absolute; top: 1;"><br>
+</form>
+</div>
+</div>
+
+<div id="mse" style="display:none">
+
+<table style="border-style:solid; border-width:3; background-color:#fff9d5; padding:5px" width="350px" height="15px" align="center">
+  <tr>
+   <td>
+ <p align="center">
+  <span style="font-size: 10pt;color: #000000;">現在、投票を受け付けておりません。</span><br>
+  <span style="font-size: 10pt;color: #000000;">今一度、投票日程の確認をお願いします。</span>
+ </p>
+   </td>
+  </tr>
+</table>
+</div>
+
+<script>
+   document.getElementById("kaku").onclick = function() {
+              localStorage.setItem('storage',"test5");
+   }
+</script>
+
+<script>
+     //localStorage.setItem('storage',"test2");
+     localStorage.removeItem('storage',"test2");
+</script>
+
+<script>
+   document.getElementById("kakuse").onclick = function() {
+              localStorage.removeItem('storage',"test5");
+   }
+</script>
+
+<script>
+if (localStorage.getItem("storage") == "test2") {
+document.getElementById('kaku').style.display = 'block';
+document.getElementById('main').style.display = 'block';
+} else {
+document.getElementById('kaku').style.display = 'none';
+document.getElementById('mains').style.display = 'none';
+document.getElementById('main').style.display = 'none';
+document.getElementById('mse').style.display = 'block';
+}
+</script>
+
+
+<script>
+if (localStorage.getItem("storage") == "test5") {
+document.getElementById('kaku').style.display = 'none';
+document.getElementById('mains').style.display = 'block';
+document.getElementById('mse').style.display = 'none';
+alert('すでに投票済みです');
+} else {
+
+}
+</script>
+
+<script type="text/javascript">var submitted = false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='uketuke.html';}"></iframe>
+
+</body>
+<style>
+
+textarea {
+  resize: none;
+  width:90px;
+  height:380px;
+  font-size: 150%;
+  background-color: #fff9d5;
+}
+
+ select {
+  font-size: 100%;
+}
+
+ input {
+  padding: .2em .1em;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 0px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  width: 50px;
+  height: 150px;
+  font-weight: bold;
+  transition: 0.3s;
+  background-color: #26a69a;
+}
+
+ input:hover {
+  opacity: .7;
+}
+
+ .boby {
+   writing-mode: vertical-lr;
+   font-family: sans-serif;
+  }
+  
+   .field {
+    width: 10px;
+    font-size: 180%;
+   }
+ 
+     .label {
+      display: block;
+      font-size: 200%;
+    }
+
+</style>
+</html>
