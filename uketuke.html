@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title></title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" href="apple-touch-icons.png">
+        <link rel="manifest" href="manifest.json">
+</head>
+<body>
+<br>
+<div id="text" style="display:none" align="center">
+<p align="center"><span style="font-size: 18pt;color: #000000;">投票を受付ました</span></p><br>
+<a href="index.html" style="text-decoration:none;"><input type="button" align="center" name="" value="もどる"></a>
+</div>
+
+<table style="border-style:solid; border-width:0; background-color:#ffffff; padding:30px" width="120px" height="15px" align="center">
+  <tr>
+   <td><p id="load"><div class="loader" id="loads"></div><p id="loade">　投票処理中...</p><p id="loades" style="display:none">　投票送信中...</p></p></td>
+
+  </tr>
+</table>
+
+
+  <script>
+    window.onload = function() {
+      setTimeout(function() {
+        document.getElementById('loade').style.display = 'none';
+        document.getElementById('loades').style.display = 'block';
+      }, 1500);
+      setTimeout(function() {
+        document.getElementById('load').style.display = 'none';
+        document.getElementById('loads').style.display = 'none';
+        document.getElementById('loades').style.display = 'none';
+        document.getElementById('text').style.display = 'block';
+      }, 3900); // 3900ミリ秒（3.9秒）
+    };
+  </script>
+</body>
+
+<style>
+
+body {
+  font-family: sans-serif;
+}
+
+input { font-size: 120%;
+    }
+
+
+ input {
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 0px;
+  text-align: center;
+  border: none;
+  border-radius: 10px;
+  width: 135px;
+  height: 35px;
+  font-weight: bold;
+  background-color: #26a69a;
+}
+
+ input:hover {
+  opacity: .7;
+}
+
+.loader {
+  border: 12px solid #e5e5e5;
+  border-radius: 50%;
+  border-top: 12px solid #26a69a;
+  width: 90px;
+  height: 90px;
+  animation: spin 1s linear infinite;  //これを追加！！！
+}
+
+@keyframes spin{
+  0%{
+    transform: rotate(0deg);  //アニメーション開始時にどういう状態か？
+  }
+
+  100%{
+    transform: rotate(360deg);　//アニメーション終了時にどういう状態か？
+  }
+}
+
+</style>
+
+</html>

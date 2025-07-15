@@ -1,0 +1,293 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html lang="ja">
+<head>
+	<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=0.9"/>
+	        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=XXXXXXXXX"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXX');
+        </script>
+        <meta charset="UTF-8">
+        <title>選挙投票</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" href="apple-touch-icons.png">
+        <link rel="manifest" href="manifest.json">
+
+        <link rel="stylesheet" href="main.css">
+
+        <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+
+</head>
+<body>
+<div align="center">
+<p id="mains" style="transform: rotate(0deg); transform-origin: top right; writing-mode: initial; font-size: 18px; display:none; font-family: sans-serif;">投票は完了しています。<br>ご協力頂きありがとうございました。</p>
+</div>
+
+<div align="center">
+<br>
+<div class="boby" id="main" style="display:none">
+<form action= "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfiFt2UIuG3H-_cVBt_BGuwWF6-Y0PKUtlmWs-cyGA3UvbWGA/formResponse" "method="post" target="hidden_iframe" onsubmit="submitted=true;">
+<table border="1"  style="border-style:solid; border-collapse:collapse; border-width:6;">
+<tr>
+<td style="border-style:solid; border-width:3; background-color:#fff9d5; padding:9px">
+<br>
+<textarea  name="entry.1041021733" rows="6" cols="20" style="font-size: 40pt;"></textarea><br>
+<p></p><br>
+<span style="font-size: 10pt;color: #000000;">二　候補者でない者の氏名は、書かないこと。</span><br>
+<span style="font-size: 10pt;color: #000000;">一　候補者の氏名は、欄内に一人書くこと。</span><br><br>
+<p></p>
+<span class="field" style="color: #000000;"><b>第二十二回総裁選</b></span>
+</td>
+</tr>
+</table>
+<br><input class="boby" type="submit" name="" value="投票する" id="kaku" style="position: absolute; top: 1;">
+<a id="btn3" class="original-button">？</a>
+</form>
+</div>
+</div>
+
+
+<div id="mask" class="hidden"></div>
+<section id="modal" class="hidden">
+  <p>キーボードが表示されない時は<br>端末を再起動して下さい。<br>（iPhoneのみ）</p>
+</section>
+
+
+<div id="masks" class="hidden"></div>
+<section id="modals" class="hidden">
+  <p>すでに投票済みです</p>
+</section>
+
+
+<div id="maske" class="hidden"></div>
+<section id="modale" class="hidden">
+  <p>現在、投票を受け付けておりません。</p>
+</section>
+
+
+<script>
+   document.getElementById("kaku").onclick = function() {
+              localStorage.setItem('storage',"test7");
+   }
+</script>
+
+
+<!--投票可・不可切り替え-->
+<script>
+  //maske.classList.remove('hidden');
+  //modale.classList.remove('hidden');
+</script>
+
+
+<script>
+if (localStorage.getItem("storage") == "test7") {
+document.getElementById('kaku').style.display = 'none';
+document.getElementById('main').style.display = 'none';
+document.getElementById('mains').style.display = 'block';
+document.getElementById('btn3').style.display = 'block';
+  masks.classList.remove('hidden');
+  modals.classList.remove('hidden');
+} else {
+document.getElementById('kaku').style.display = 'block';
+document.getElementById('mains').style.display = 'none';
+document.getElementById('main').style.display = 'block';
+}
+</script>
+
+
+<script type="text/javascript">var submitted = false;</script>
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted){window.location='uketuke.html';}"></iframe>
+
+<script>
+const btn3 = document.getElementById('btn3');
+const mask = document.getElementById('mask');
+const modal = document.getElementById('modal');
+
+btn3.addEventListener('click', () => {
+  mask.classList.remove('hidden');
+  modal.classList.remove('hidden');
+});
+
+mask.addEventListener('click', () => {
+  mask.classList.add('hidden');
+  modal.classList.add('hidden');
+});
+
+masks.addEventListener('click', () => {
+  masks.classList.add('hidden');
+  modals.classList.add('hidden');
+});
+</script>
+
+
+</body>
+<style>
+
+textarea {
+  resize: none;
+  width:90px;
+  height:380px;
+  font-size: 150%;
+  background-color: #fff9d5;
+}
+
+ select {
+  font-size: 100%;
+}
+
+ input {
+  padding: .2em .1em;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 25px;
+  line-height: 0px;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  width: 50px;
+  height: 150px;
+  font-weight: bold;
+  transition: 0.3s;
+  background-color: #26a69a;
+}
+
+ input:hover {
+  opacity: .7;
+}
+
+ .boby {
+   writing-mode: vertical-lr;
+   font-family: sans-serif;
+  }
+  
+   .field {
+    width: 10px;
+    font-size: 180%;
+   }
+ 
+     .label {
+      display: block;
+      font-size: 200%;
+    }
+
+ .original-button {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   padding: .3em .1em;
+   text-decoration: none;
+   color: #ffffff;
+   font-size: 25px;
+   line-height: 0px;
+   text-align: center;
+   border-radius: 10px;
+   border: none;
+   width: 45px;
+   height: 35px;
+   font-weight: bold;
+   border-radius: 26px;
+   transition: 0.3s
+   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.5);
+   text-shadow: 2px 2px 2px rgba(121, 112, 112, 0.8);
+   background-color: #ff8f34;
+ }
+
+ .original-button:hover {
+   opacity: .7;
+ }
+
+
+.btn-container {
+  text-align: center;
+}
+
+
+.hidden {
+  display: none;
+}
+
+#mask {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modal {
+  background: #fff;
+  width: 250px;
+  padding: 24px;
+  border-radius: 4px;
+  color: brack;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+
+#masks {
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modals {
+  background: #fff;
+  width: 180px;
+  padding: 24px;
+  border-radius: 4px;
+  color: brack;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+
+#maske {
+  background: #fff;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+
+#modale {
+  background: #fff9d5;
+  border: 2px solid #000000;
+  width: 320px;
+  padding: 10px;
+  border-radius: 8px;
+  color: brack;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+</style>
+</html>
